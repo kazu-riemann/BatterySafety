@@ -50,9 +50,9 @@ This builds the targets declared in `lakefile.toml`, including the `battsafeproo
 
 The safety condition is:
 
-\[
+$$
 0 < \mathrm{SoC} < 100
-\]
+$$
 
 It is represented by the predicate `IsSafe`. The use of `Rat` allows the examples to represent decimal SoC values exactly, rather than introducing floating-point rounding.
 
@@ -123,9 +123,9 @@ The transition is accepted only if all three conditions hold:
 
 The controller-output requirement is:
 
-\[
+$$
 \mathrm{SoC} < 95 \;\lor\; \mathrm{signal} = \mathrm{Off}
-\]
+$$
 
 In other words, when the current SoC is at least `95`, the reported control signal must be `Off`.
 
