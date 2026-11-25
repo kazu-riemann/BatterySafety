@@ -124,16 +124,16 @@ public def main (args : List String) : IO Unit := do
                 -- Accept the reported next state using the combined proof.
                 let accepted := acceptStep step proof
                 IO.println
-                  s!"[Validation passed] Accepted next state: {repr accepted}"
+                  s!"[Verification passed] Accepted next state: {repr accepted}"
               else
                 IO.println
-                  s!"[Validation failed] The next state is outside the safe range: {repr next}"
+                  s!"[Verification failed] The next state is outside the safe range: {repr next}"
             else
               IO.println
-                s!"[Validation failed] The control signal violates the controller requirement: {repr signal}"
+                s!"[Verification failed] The control signal violates the controller requirement: {repr signal}"
           else
             IO.println
-              s!"[Validation failed] The current state is outside the safe range: {repr current}"
+              s!"[Verification failed] The current state is outside the safe range: {repr current}"
       | _, _, _ =>
           IO.println "Error: Invalid input format."
   | _ =>

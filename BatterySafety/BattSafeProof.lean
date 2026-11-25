@@ -80,11 +80,11 @@ public def main (args : List String) : IO Unit := do
 
     -- Check whether the supplied initial state satisfies the safety condition.
     if h_safe : IsSafe current_battery then
-      IO.println s!"[Validation passed] Initial state is safe: {repr current_battery}"
+      IO.println s!"[Verification passed] Initial state is safe: {repr current_battery}"
 
       -- The initial-state proof is passed to the proof-backed simulation step.
       let next_battery := stepSimulationSecurely current_battery h_safe
       IO.println s!"[Control step] State after one step: {repr next_battery}"
 
     else
-      IO.println s!"[Validation failed] The supplied battery state does not satisfy the safety condition."
+      IO.println s!"[Verification failed] The supplied battery state does not satisfy the safety condition."
